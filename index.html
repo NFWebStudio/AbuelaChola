@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abuela Chola - Sabor Único</title>
+
+    <link rel="icon" type="image/png" href="Logopng.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Special+Elite&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <style>
+        :root {
+            --crema: #F9F4E8;
+            --dorado: #D9C58F;
+            --negro: #2B2825;
+            --rojo-vintage: #A63D2D;
+            --blanco: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--crema);
+            margin: 0;
+            padding-top: 140px; 
+            color: var(--negro);
+            scroll-behavior: smooth;
+        }
+
+        /* BARRA DE NAVEGACIÓN FIJA */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--blanco);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 10px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .nav-logo {
+            height: 60px;
+            margin-bottom: 5px;
+        }
+
+        .nav-title {
+            font-family: 'Special Elite', cursive;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: var(--rojo-vintage);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 5px 10px;
+            width: 100%;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--negro);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 5px;
+            background: var(--dorado);
+            border: 1px solid rgba(0,0,0,0.1);
+            white-space: nowrap;
+            transition: 0.3s;
+        }
+
+        .nav-links a:active {
+            background: var(--rojo-vintage);
+            color: white;
+        }
+
+        /* SECCIONES */
+        .seccion-titulo {
+            font-family: 'Special Elite', cursive;
+            text-align: center;
+            padding: 40px 0 20px;
+            font-size: 2rem;
+            color: var(--rojo-vintage);
+            text-transform: uppercase;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            border-bottom: 4px solid var(--dorado);
+        }
+
+        .card-img { width: 100%; height: 200px; object-fit: cover; }
+
+        .card-body { padding: 15px; flex-grow: 1; }
+
+        .card-title { font-size: 1.1rem; margin: 0 0 5px 0; color: var(--negro); }
+
+        .card-desc { font-size: 0.85rem; color: #000000; margin-bottom: 10px; min-height: 35px; }
+
+        .price { 
+            font-weight: bold; 
+            color: var(--rojo-vintage); 
+            font-size: 1.2rem;
+        }
+        .price-two { 
+            font-weight: bold; 
+            color: var(--rojo-vintage); 
+            font-size: 1.0rem;
+        }
+
+        /* BOTÓN WHATSAPP FLOTANTE */
+        .float-wa {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .float-wa:hover {
+            background-color: #A63D2D;
+            color: #FFF;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .menu-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            body { padding-top: 160px; }
+            .menu-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .card-title { font-size: 0.95rem; }
+            .card-img { height: 130px; }
+            .float-wa { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <img src="Logopng.png" alt="Abuela Chola Logo" class="nav-logo">
+        <div class="nav-title">ABUELA CHOLA</div>
+        <div class="nav-links">
+            <a href="#entradas">Pastas</a>
+            <a href="#comidas">Comidas</a>
+            <a href="#bebidas">Salsas</a>
+            <a href="#postres">Postres</a>
+        </div>
+    </nav>
+
+    <a href="https://wa.me/5491100000000?text=Hola!%20Me%20gustaría%20hacer%20un%20pedido" class="float-wa" target="_blank">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+
+    <h2 id="entradas" class="seccion-titulo">Pastas</h2>
+    <main class="menu-grid">
+    <article class="card">
+        <img src="https://i.postimg.cc/522gQgQP/Canelones.jpg" class="card-img" alt="Canelones Caseros"
+        <div class="card-body">
+            <h3 class="card-title">Canelones Artesanales</h3>
+            <p class="card-desc">
+            <strong>Rellenos:</strong><br>
+            • Verdura con Ricota<br>
+            • Verdura, Ricota y Jamon<br>
+            • Verdura, Ricota y Muzza<br>
+            • Verdura y Muzzarella<br>
+            • Verdura y Carne<br>
+            • Ricota, Jamon y Nuez<br><br>
+            <strong>Salsas a elección:</strong>
+        </p>
+        <span class="price">$19.500</span>
+        </div>
+    </article>
+        <article class="card">
+            <img src="https://i.postimg.cc/JzYqNXbw/Ravioles.jpg" class="card-img" alt="Ravioles" style="object-position: center 70%;">
+            <div class="card-body">
+                <h3 class="card-title">Ravioles</h3>
+            <p class="card-desc">
+            <strong>Rellenos:</strong><br>
+            • Verdura con Ricota<br>
+            • Verdura con Carne<br>
+            • Jamon y Muzzarella<br>
+            • Ricota<br><br>
+            <strong>Salsas a elección:</strong>
+        </p>
+        <span class="price">$5.900</span>
+            </div>
+        </article>
+        <article class="card">
+            <img src="https://i.postimg.cc/mgpwY9Q4/Raviolones.jpg" class="card-img" alt="Sorrentinos" style=" object-position: center 10%;">
+            <div class="card-body">
+                <h3 class="card-title">Sorrentinos Clasicos</h3>
+            <p class="card-desc">
+            <strong>Rellenos:</strong><br>
+            • Jamon y Muzzarella<br>
+            • Jamon y Roquefort<br>
+            • Ricota, Jamon y Nuez<br>
+            • Calabaza con Queso<br>
+            • Verdura y Ricota<br><br>
+            <strong>Salsas a elección:</strong>
+        </p>
+        <span class="price">$8.900</span>
+            </div>
+        </article>
+         <article class="card">
+            <img src="https://i.postimg.cc/ydf3zcBr/Lasagna.jpg" class="card-img" alt="Sorrentinos" style=" object-position: center 70%;">
+            <div class="card-body">
+                <h3 class="card-title">Lasagna</h3>
+            <p class="card-desc">
+            <strong><i>Tradicional</i></strong><br>
+            • Rellena de Verdura, Ricota y Jamon<br>
+            <b>Familiar:</b> <span class="price-two">$23.500</span><br>
+            <b>Individual:</b> <span class="price-two">$8.000</span><br>
+            <strong><i>ESPECIAL</i></strong><br>
+            • Rellena de Verdura y Carne<br>
+            • Rellena de Verdura, Jamon y Muzza<br>
+            <b>Familiar:</b> <span class="price-two">$28.500</span><br>
+            <b>Individual:</b> <span class="price-two">$9.500</span><br>
+        </p>
+            </div>
+        </article>
+         <article class="card">
+            <img src="https://i.postimg.cc/DwpgrG19/Noquis-de-papa.jpg" class="card-img" alt="Ñoquis" style=" object-position: center 50%;">
+            <div class="card-body">
+                <h3 class="card-title">Ñoquis</h3>
+            <p class="card-desc">
+            <strong>Rellenos:</strong><br>
+            • Papa<br>
+            • Calabaza<br>
+            • Espinaca<br>
+            • Remolacha<br>
+            • TriColor<br><br>
+            <strong>Salsas a elección:</strong>
+        </p>
+        <span class="price">$8.900</span>
+            </div>
+        </article>
+        <article class="card">
+            <img src="https://i.postimg.cc/t4v536FS/Fideos.jpg" class="card-img" alt="Fideos" style=" object-position: center 40%;">
+            <div class="card-body">
+                <h3 class="card-title">Fideos</h3>
+            <p class="card-desc">
+            <strong>Rellenos:</strong><br>
+        </p>
+        <span class="price">$8.900</span>
+            </div>
+        </article>
+    </main>
+
+    <h2 id="comidas" class="seccion-titulo">Comidas</h2>
+    <main class="menu-grid">
+        <article class="card">
+            <img src="https://i.postimg.cc/L8QTtPjN/Empanadas.jpg" class="card-img" alt="Empanadas" style=" object-position: center 90%;">
+            <div class="card-body">
+                <h3 class="card-title">Empanadas</h3>
+                <p class="card-desc">-</p>
+                <span class="price">$</span>
+            </div>
+        </article>
+        <article class="card">
+            <img src="https://i.postimg.cc/sgHcYWpV/Tarta.jpg" class="card-img" alt="Tarta" style=" object-position: center 80%;">
+            <div class="card-body">
+                <h3 class="card-title">Minis Tartas</h3>
+                <p class="card-desc">-</p>
+                <span class="price">$</span>
+            </div>
+        </article>
+    </main>
+
+    <h2 id="bebidas" class="seccion-titulo">Salsas</h2>
+    <main class="menu-grid">
+        <article class="card">
+            <img src="" class="card-img" alt="Coca Cola">
+            <div class="card-body">
+                <h3 class="card-title">Bolognesa</h3>
+                <p class="card-desc">-</p>
+                <span class="price">$</span>
+            </div>
+        </article>
+        <article class="card">
+            <img src="" class="card-img" alt="Cerveza">
+            <div class="card-body">
+                <h3 class="card-title">Salsa Blanca </h3>
+                <p class="card-desc">-</p>
+                <span class="price">$</span>
+            </div>
+        </article>
+    </main>
+
+    <h2 id="postres" class="seccion-titulo">Postres</h2>
+    <main class="menu-grid">
+       <article class="card">
+    <img src="https://i.postimg.cc/4x256czk/Panqueques.jpg" class="card-img" alt="Panqueques" style="object-position: 20% 80%;">
+    <div class="card-body">
+        <h3 class="card-title">Panqueques</h3>
+        <p class="card-desc">Panqueques con dulce de leche y crema</p>
+        <span class="price">$3.900</span>
+    </div>
+</article>
+    </main>
+
+</body>
+</html>
