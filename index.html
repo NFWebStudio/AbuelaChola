@@ -176,6 +176,24 @@
             .card-img { height: 130px; }
             .float-wa { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 25px; }
         }
+
+        /* Este código hará que el globo/estrella flote en la esquina inferior derecha */
+        .descuento-general {
+            position: fixed; /* Lo fija a la pantalla, no a la página */
+            bottom: 530px;     /* Distancia desde abajo */
+            right: 20px;      /* Distancia desde la derecha */
+            width: 150px;     /* Ancho de la imagen (ajusta según necesites) */
+            height: auto;     /* Mantiene la proporción */
+            z-index: 1000;    /* Se asegura de que esté por encima de todo */
+            cursor: pointer;  /* Muestra el puntero de mano si es clickeable */
+            filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.589)); /* Sombra para darle profundidad */
+            transition: transform 0.3s ease; /* Efecto suave al pasar el mouse */
+        }       
+
+/* Efecto opcional al pasar el mouse (hover) */
+.descuento-general:hover {
+    transform: scale(1.1); /* Lo agranda un poquito */
+}
     </style>
 </head>
 <body>
@@ -184,6 +202,7 @@
         <img src="Logopng.png" alt="Abuela Chola Logo" class="nav-logo">
         <div class="nav-title">ABUELA CHOLA</div>
         <div class="nav-links">
+            <a href="#promos" style="background-color: #A63D2D; color: white;">𝗣𝗥𝗢𝗠𝗢𝗦</a>
             <a href="#entradas">Pastas</a>
             <a href="#comidas">Comidas</a>
             <a href="#bebidas">Salsas</a>
@@ -194,6 +213,47 @@
     <a href="https://wa.me/5492214541419?text=Hola!%20Me%20gustaría%20hacer%20un%20pedido" class="float-wa" target="_blank">
         <i class="fa fa-whatsapp"></i>
     </a>
+
+    <h2 id="promos" class="seccion-titulo">Promos</h2>
+    <main class="menu-grid">
+        <article class="card">
+            <img src="https://i.postimg.cc/JzYqNXbw/Ravioles.jpg" class="card-img" alt="Promo 1" style="object-position: center 70%;">
+            <div class="card-body">
+                <h3 class="card-title">PROMO RAVIOLES</h3>
+                <strong><p style="color: #075aad;"><b>PAGAS 3 Y LLEVAS 4!!</b></strong></p>
+                <p class="card-desc" style="color: #000000;">(En relleno de:<b> Verdura con Ricota o Ricota) </b></p>
+                <span class="price">$17.700</span>
+            </div>
+        </article>
+        <article class="card">
+            <img src="https://i.postimg.cc/mgpwY9Q4/Raviolones.jpg" class="card-img" alt="Promo 2" style=" object-position: center 10%;">
+            <div class="card-body">
+                <h3 class="card-title">PROMO SORRENTINOS</h3>
+                <strong><p style="color: #075aad;"><b>4 DOCENAS SURTIDAS A ELECCIÓN.</b></strong></p>
+                <p class="card-desc" style="color: #000000;">Consulte por los rellenos disponibles.</b></p>
+                <span class="price">$29.900</span>
+            </div>
+        </article>
+        <article class="card">
+    <img src="https://i.postimg.cc/522gQgQP/Canelones.jpg" class="card-img" alt="Promo 3">
+    <div class="card-body">
+        <h3 class="card-title">PROMO CANELONES</h3>
+        
+        <!-- PROMO 1 -->
+        <p style="margin-bottom: 5px;"><strong>PROMO 1:</strong></p>
+        <p style="color: #075aad;"><b>24 DE VERDURA CON RICOTA.</b></p>
+        <span class="price">$29.900</span>
+        
+        <hr style="border: 0.5px solid #000000; margin: 15px 0;"> <!-- Línea divisoria opcional -->
+
+        <!-- PROMO 2 -->
+        <p style="margin-bottom: 5px;"><strong>PROMO 2:</strong></p>
+        <p style="color: #075aad; margin-bottom: 0;"><b>12 DE VERDURA CON RICOTA.</b></p>
+        <p style="color: #075aad;"><b>12 DE VERDURA CON CARNE.</b></p>
+        <span class="price">$32.900</span>
+    </div>
+</article>
+    </main>
 
     <h2 id="entradas" class="seccion-titulo">Pastas</h2>
     <main class="menu-grid">
@@ -374,6 +434,8 @@
     </div>
 </article>
     </main>
+
+    <img src="https://i.postimg.cc/YCmtNQm8/10des.png" alt="10% de descuento en efectivo en todo" class="descuento-general">
 
 </body>
 </html>
