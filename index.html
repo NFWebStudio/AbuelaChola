@@ -169,64 +169,6 @@
         @media (max-width: 900px) {
             .menu-grid { grid-template-columns: repeat(2, 1fr); }
         }
-       /* DISEÑO DE PROMO ÚNICA - EFECTIVO */
-        .promo-efectivo-container {
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-            background-color: #fdfaf3; /* Un tono más claro que el crema base */
-        }
-
-        .sello-promo {
-            width: 280px;
-            height: 280px;
-            background-color: var(--rojo-vintage);
-            border: 4px double var(--blanco);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            box-shadow: 0 0 0 10px var(--rojo-vintage), 0 10px 20px rgba(0,0,0,0.2);
-            transform: rotate(-5deg); /* Le da el toque de sello manual */
-            transition: 0.3s;
-        }
-
-        .sello-promo:hover {
-            transform: rotate(0deg) scale(1.05);
-        }
-
-        .sello-texto-top {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        .sello-porcentaje {
-            font-family: 'Cherry Bomb One', cursive;
-            font-size: 4rem;
-            line-height: 1;
-            margin: 5px 0;
-        }
-
-        .sello-texto-bottom {
-            font-family: 'Special Elite', cursive;
-            font-size: 1.2rem;
-            padding: 0 20px;
-        }
-
-        /* Ajuste móvil para que se vea "de una" */
-        @media (max-width: 600px) {
-        .sello-promo {
-                width: 220px;
-                height: 220px;
-        }
-        .sello-porcentaje { font-size: 3rem; }
-        .sello-texto-bottom { font-size: 1rem; }
-    }
 
     </style>
 </head>
@@ -252,12 +194,6 @@
 
     <h2 id="promos" class="seccion-titulo">Promos</h2>
     <main class="menu-grid">
-        <section class="promo-efectivo-container">
-        <div class="sello-promo">
-            <span class="sello-texto-top">DESCUENTO!!</span>
-            <span class="sello-porcentaje">10%</span>
-            <span class="sello-texto-bottom">OFF<br> PAGANDO EN EFECTIVO</span>
-        </div>
         <article class="card">
             <img src="https://i.postimg.cc/JzYqNXbw/Ravioles.jpg" class="card-img" alt="Promo 1" style="object-position: center 70%;">
             <div class="card-body">
