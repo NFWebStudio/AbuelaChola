@@ -177,26 +177,59 @@
             .float-wa { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 25px; }
         }
 
-        /* Este código hará que el globo/estrella flote en la esquina inferior derecha */
-         .descuento-general {
-            position: fixed; /* Lo fija a la pantalla, no a la página */
-            bottom: 590px;     /* Distancia desde abajo */
-            right: 800px;      /* Distancia desde la derecha */
-            width: 100px;     /* Ancho de la imagen (ajusta según necesites) */
-            height: auto;     /* Mantiene la proporción */
-            z-index: 1000;    /* Se asegura de que esté por encima de todo */
-            cursor: pointer;  /* Muestra el puntero de mano si es clickeable */
-            filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.589)); /* Sombra para darle profundidad */
-            transition: transform 0.3s ease; /* Efecto suave al pasar el mouse */
-        }       
+        /* SELLO DE DESCUENTO FLOTANTE */
+        .badge-efectivo {
+            position: fixed;
+            top: 150px; /* Debajo de la nav bar */
+            right: 30px;
+            width: 100px;
+            height: 100px;
+            background-color: var(--rojo-vintage);
+            color: rgb(255, 255, 255);
+            border-radius: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.75rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 999;
+            transform: rotate(15deg); /* Le da un toque vintage de "etiqueta" */
+            border: 2px dashed white;
+            transition: 0.3s;
+            cursor: default;
+        }
 
-/* Efecto opcional al pasar el mouse (hover) */
-.descuento-general:hover {
-    transform: scale(1.1); /* Lo agranda un poquito */
-}
+        .badge-efectivo span {
+            font-size: 1.2rem;
+            display: block;
+        }
+
+        .badge-efectivo:hover {
+            transform: rotate(0deg) scale(1.1);
+        }
+
+        /* Ajuste para móviles */
+        @media (max-width: 600px) {
+            .badge-efectivo {
+                width: 70px;
+                height: 70px;
+                font-size: 0.6rem;
+                top: 170px;
+                right: 10px;
+            }
+            .badge-efectivo span { font-size: 1rem; }
+        }     
     </style>
 </head>
 <body>
+
+    <div class="badge-efectivo">
+        <span>10% EN</span>
+        EFECTIVO
+    </div>
 
     <nav>
         <img src="Logopng.png" alt="Abuela Chola Logo" class="nav-logo">
