@@ -169,10 +169,24 @@
         @media (max-width: 900px) {
             .menu-grid { grid-template-columns: repeat(2, 1fr); }
         }
+        @media (max-width: 600px) {
+            body { padding-top: 160px; }
+            .menu-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .card-title { font-size: 0.95rem; }
+            .card-img { height: 130px; }
+            .float-wa { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 25px; }
+        }
+        /* --- TRUCO PARA EVITAR EL DESPLAZAMIENTO LATERAL --- */
+        html, body {
+            overflow-x: hidden; /* Esto evita que el dedo se deslice a la izquierda */
+            position: relative;
+            width: 100%;
+        }
 
     </style>
 </head>
-<body> 
+<body>
+
     <nav>
         <img src="Logopng.png" alt="Abuela Chola Logo" class="nav-logo">
         <div class="nav-title">ABUELA CHOLA</div>
@@ -189,8 +203,9 @@
         <i class="fa fa-whatsapp"></i>
     </a>
 
-    <h2 id="promos" class="seccion-titulo">Promos</h2>
-    <main class="menu-grid">
+        <h2 id="promos" class="seccion-titulo">Promos</h2>
+        <main class="menu-grid">
+    </section>
         <article class="card">
             <img src="https://i.postimg.cc/JzYqNXbw/Ravioles.jpg" class="card-img" alt="Promo 1" style="object-position: center 70%;">
             <div class="card-body">
@@ -376,24 +391,33 @@
                 <span class="price">$</span>
             </div>
         </article>
+        <article class="card">
+            <img src="https://i.postimg.cc/85fgQ454/Focaccia.jpg" class="card-img" alt="Foccacia" style=" object-position: center 75%;">
+            <div class="card-body">
+                <h3 class="card-title">Sándwich de Focaccia</h3>
+                <p class="card-desc">Rellena con Jamon, Queso, Lechuga y Tomate</p>
+                <span class="price">$4.900</span>
+            </div>
+        </article>
+         <article class="card">
+            <img src="https://i.postimg.cc/Fs458jQh/Sandwich-de-milanesa.jpg" class="card-img" alt="Sandwich-de-milanesa" style=" object-position: center 70%;">
+            <div class="card-body">
+                <h3 class="card-title">Sándwich de Milanesa de Pollo</h3>
+                <p class="card-desc">Relleno con Jamon, Queso, Lechuga y Tomate</p>
+                <span class="price">$7.500</span>
+            </div>
+        </article>
     </main>
 
     <h2 id="bebidas" class="seccion-titulo">Salsas</h2>
     <main class="menu-grid">
         <article class="card">
-            <img src="" class="card-img" alt="Bolognesa">
+            <img src="https://i.postimg.cc/L5zdhsjj/Salsas.jpg" class="card-img" alt="Bolognesa" style=" object-position: center 60%;">
             <div class="card-body">
-                <h3 class="card-title">Bolognesa</h3>
-                <p class="card-desc">-</p>
-                <span class="price">$</span>
-            </div>
-        </article>
-        <article class="card">
-            <img src="" class="card-img" alt="SalsaBlanca">
-            <div class="card-body">
-                <h3 class="card-title">Salsa Blanca </h3>
-                <p class="card-desc">-</p>
-                <span class="price">$</span>
+                <h3 class="card-title">Salsas</h3>
+                • <b>Filetto:</b> <span class="price">$4.500</span><br>
+                • <b>Bechamel:</b> <span class="price">$4.500</span><br>
+                • <b>Bolognesa:</b> <span class="price">$5.500</span><br><br>
             </div>
         </article>
     </main>
@@ -409,6 +433,7 @@
     </div>
 </article>
     </main>
+
 
 </body>
 </html>
